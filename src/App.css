@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cards{
+   width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cardHeadImage{
+   width: 200px;
+   height: 200px;
+   background-color: #F8F8F8;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cardfooter > div {
+   display: flex;
+   justify-content: center;
+   width: 33.33% !important ; 
 }
 
-.App-link {
-  color: #61dafb;
+.edit-btn{
+   text-decoration: none !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon-decoration{
+   font-size: 18px;
+   color: #949494;
+}
+
+.heart-decoration{
+   /* color : rgb(255, 0, 0); */
+   font-size: 20px;
+}
+
+.contact-info > div {
+    display: flex;
+}
+
+.contact-info > div > h6 {
+   padding-left: 10px;
+}
+
+.model-btn:hover{
+   color: #949494;
+}
+
+.requiredField{
+   color: red;
+}
+
+.forms > div{
+   display: flex;
+   width: 100%;
+}
+
+.form-lable{
+  flex-basis: 30%;
+  text-align: end;
+  padding-right: 10px ;
+}
+
+.form-validate{
+   flex-basis: 70%;
 }
