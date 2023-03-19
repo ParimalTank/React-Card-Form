@@ -17,14 +17,12 @@ const Cards = () => {
     loadData();
   }, []);
 
-  console.log("This is Data", data);
-
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
    
-      setIsActive(current => !current );
-      // setData([...data, userData])
+      setIsActive(current => !current);
+      // setData([...data, isActive])
     }
 
   // console.log('isActive Status' , isActive);
@@ -34,7 +32,7 @@ const Cards = () => {
       <Row className="gx-5">
         {data &&
           data.map((user) => {
-            return <UserCard data={{ user }} isActive={isActive} handleClick={handleClick} />;
+            return <UserCard data={{ user }} allData={data} isActive={isActive} handleClick={handleClick} />;
           })}
       </Row>
     </div>

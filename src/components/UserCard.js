@@ -16,7 +16,10 @@ const UserCard = (props) => {
 
     const { data } = props
 
+    const { allData} = props
+
     const { handleClick} = props
+
 
     const handleLike = () => {
         handleClick()
@@ -126,9 +129,9 @@ const UserCard = (props) => {
                       </i>
                     </button>
                   </div>
-
+                          {console.log('this is user id from usercard', data.user.id)}
                   <div style={{ borderRight: "1px solid black" }}>
-                    <UserModel />
+                    <UserModel userData={[data.user.id,data.user.name,data.user.email,data.user.phone,data.user.website]} data={allData} />
                   </div>
 
                   <div>

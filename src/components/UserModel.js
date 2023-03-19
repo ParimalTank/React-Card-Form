@@ -12,7 +12,27 @@ import {
   ModalHeader,
 } from "reactstrap";
 
-const UserModel = () => {
+const UserModel = (props) => {
+
+  const {userData} = props;
+
+  const [usersData,setUsersData] = useState('')
+
+
+  const inputHandler = (e) =>{
+    setUsersData(usersData =>({...usersData, [e.target.name] : e.target.value}))
+  }
+
+  // console.log('This is Data Id' , dataId)
+
+  // console.log('This is All Data from UserModel'  , data);
+
+  // data.map((result) => {
+  //    if(result.id === dataId){
+  //         console.log('This is Click Model' , result)
+  //    }
+  // })
+
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
@@ -38,6 +58,7 @@ const UserModel = () => {
         <ModalHeader toggle={toggle}>Basic Modal</ModalHeader>
 
         <ModalBody>
+
           <Form>
             <FormGroup className="forms">
               <div>
@@ -45,13 +66,11 @@ const UserModel = () => {
                   <span className="requiredField">*</span>Name:
                 </Label>
                 <div className="form-validate">
-                  <Input valid />
-                  <FormFeedback valid>
-                    Sweet! that name is available
-                  </FormFeedback>
+                  <Input value={userData[1]} name='name' onChange={inputHandler}  />
                 </div>
 
                 {/* <Input invalid />
+                  <FormFeedback valid>Sweet! that name is available</FormFeedback>
                 <FormFeedback>Oh noes! that name is already taken</FormFeedback> */}
               </div>
             </FormGroup>
@@ -62,11 +81,11 @@ const UserModel = () => {
                   <span className="requiredField">*</span>Email:
                 </Label>
                 <div className="form-validate">
-                <Input valid />
-                <FormFeedback valid>Sweet! that name is available</FormFeedback>
+                <Input value={userData[2]} />
                 </div>
 
                 {/* <Input invalid />
+                <FormFeedback valid>Sweet! that name is available</FormFeedback>
                 <FormFeedback>Oh noes! that name is already taken</FormFeedback> */}
               </div>
             </FormGroup>
@@ -78,11 +97,11 @@ const UserModel = () => {
                   <span className="requiredField">*</span>Phone:
                 </Label>
                 <div className="form-validate">
-                <Input valid />
-                <FormFeedback valid>Sweet! that name is available</FormFeedback>
+                <Input value={userData[3]} />
                 </div>
 
                 {/* <Input invalid />
+                <FormFeedback valid>Sweet! that name is available</FormFeedback>
                 <FormFeedback>Oh noes! that name is already taken</FormFeedback> */}
               </div>
             </FormGroup>
@@ -94,17 +113,14 @@ const UserModel = () => {
                   <span className="requiredField">*</span>Website:
                 </Label>
                 <div className="form-validate">
-                <Input valid />
-                <FormFeedback valid>Sweet! that name is available</FormFeedback>
+                <Input value={userData[4]} required/>
                 </div>
 
                 {/* <Input invalid />
+                <FormFeedback valid>Sweet! that name is available</FormFeedback>
                 <FormFeedback>Oh noes! that name is already taken</FormFeedback> */}
               </div>
             </FormGroup>
-
-
-           
           </Form>
         </ModalBody>
 
